@@ -14,3 +14,7 @@ Click **Finish** button to finish the importing
 
 
 Open the **SpringKafkaMultipleConsumptionTests.java** 
+
+
+Create Topic in docker container : 
+docker exec broker kafka-topics --create --bootstrap-server localhost:9092 --partitions 4 --replication-factor 1 --topic SpringKafka
