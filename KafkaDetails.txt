@@ -1,0 +1,23 @@
+host.docker.internal 172.21.0.3
+
+#docker exec broker kafka-topics --create --bootstrap-server host.docker.internal:9092 --partitions 1 --replication-factor 1 --topic my-topic
+
+Create Topic 
+1. 
+	docker exec -it broker /bin/bash
+	kafka-topics --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic users
+
+	docker exec broker kafka-topics --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic my-topic
+
+2.  List of Topic
+
+	docker exec -it broker /bin/bash
+	kafka-topics --list --bootstrap-server localhost:9092
+	
+	docker exec broker kafka-topics --list --bootstrap-server localhost:9092
+	
+3. Get message of topic for consumer 
+	docker exec -it broker /bin/bash
+	kafka-console-consumer --bootstrap-server localhost:9092 --topic SpringKafka --from-beginning
+	
+	docker exec broker kafka-console-consumer --bootstrap-server localhost:9092 --topic my-topic --from-beginning
